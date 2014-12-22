@@ -1,0 +1,2 @@
+vhdtdtfi -lang verilog -prj graduate_rc_car -o C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/RxControl.tfi -lib work C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car//uart.v -module RxControl -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/RxControl.xst" -ofn "C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/RxControl.syr" 

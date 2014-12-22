@@ -1,0 +1,3 @@
+vhdtdtfi -lang verilog -prj graduate_rc_car -o C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/MotorControl.tfi -lib work C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car//rc_car_top.v -module MotorControl -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/MotorControl.xst" -ofn "C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/MotorControl.syr" 
+xst -intstyle ise -ifn "C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/MotorControl.xst" -ofn "C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/MotorControl.syr" 

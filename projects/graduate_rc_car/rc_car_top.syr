@@ -1,0 +1,628 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: rc_car_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "rc_car_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "rc_car_top"
+Output Format                      : NGC
+Target Device                      : xc3s100e-5-cp132
+
+---- Source Options
+Top Module Name                    : rc_car_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "uart.v" in library work
+Module <RxControl> compiled
+Module <RxReceiver> compiled
+Module <TxTransmitter> compiled
+Module <TxControl> compiled
+Module <CpuIfBlock> compiled
+Compiling verilog file "Pwm.v" in library work
+Module <UART> compiled
+Module <Pwm> compiled
+Compiling verilog file "rc_car_top.v" in library work
+Module <Motor> compiled
+Module <MotorControl> compiled
+Module <rc_car_top> compiled
+No errors in compilation
+Analysis of file <"rc_car_top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <rc_car_top> in library <work>.
+
+Analyzing hierarchy for module <RxControl> in library <work> with parameters.
+	num_samples = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <MotorControl> in library <work> with parameters.
+	M1_BACK = "00000001"
+	M1_FOR = "00000000"
+	M2_BACK = "00000011"
+	M2_FOR = "00000010"
+
+Analyzing hierarchy for module <Motor> in library <work> with parameters.
+	CLK_DIV = "00000000000000000000001111101000"
+
+Analyzing hierarchy for module <RxReceiver> in library <work> with parameters.
+	DATA = "010"
+	PARITY = "011"
+	START_BIT = "001"
+	STOP_BIT = "100"
+	WAITING = "000"
+
+Analyzing hierarchy for module <Pwm> in library <work> with parameters.
+	CLK_DIV = "00000000000000000000001111101000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <rc_car_top>.
+Module <rc_car_top> is correct for synthesis.
+ 
+Analyzing module <RxControl> in library <work>.
+	num_samples = 32'sb00000000000000000000000000010000
+Module <RxControl> is correct for synthesis.
+ 
+Analyzing module <RxReceiver> in library <work>.
+	DATA = 3'b010
+	PARITY = 3'b011
+	START_BIT = 3'b001
+	STOP_BIT = 3'b100
+	WAITING = 3'b000
+Module <RxReceiver> is correct for synthesis.
+ 
+Analyzing module <MotorControl> in library <work>.
+	M1_BACK = 8'b00000001
+	M1_FOR = 8'b00000000
+	M2_BACK = 8'b00000011
+	M2_FOR = 8'b00000010
+Module <MotorControl> is correct for synthesis.
+ 
+Analyzing module <Motor> in library <work>.
+	CLK_DIV = 32'sb00000000000000000000001111101000
+Module <Motor> is correct for synthesis.
+ 
+Analyzing module <Pwm> in library <work>.
+	CLK_DIV = 32'sb00000000000000000000001111101000
+Module <Pwm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <num_samples_r> in unit <RxControl> has a constant value of 00010000 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <MotorControl>.
+    Related source file is "rc_car_top.v".
+    Using one-hot encoding for signal <enabled_update>.
+    Found 8-bit register for signal <m1_speed_out>.
+    Found 8-bit register for signal <m2_speed_out>.
+    Found 1-bit register for signal <m1_direction_out>.
+    Found 1-bit register for signal <m2_direction_out>.
+    Found 8-bit register for signal <data_s>.
+    Found 4-bit register for signal <enabled_update>.
+    Found 8-bit register for signal <state>.
+    Summary:
+	inferred  38 D-type flip-flop(s).
+Unit <MotorControl> synthesized.
+
+
+Synthesizing Unit <RxReceiver>.
+    Related source file is "uart.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk_in                    (rising_edge)        |
+    | Reset              | enable_in                 (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <rx_complete_out>.
+    Found 1-bit register for signal <frame_error_out>.
+    Found 8-bit register for signal <data_out>.
+    Found 1-bit register for signal <break_out>.
+    Found 1-bit register for signal <rx_in_progress_out>.
+    Found 1-bit register for signal <parity_error_out>.
+    Found 3-bit register for signal <data_count_r>.
+    Found 3-bit subtractor for signal <data_count_r$addsub0000> created at line 189.
+    Found 8-bit register for signal <data_r>.
+    Found 1-bit xor10 for signal <parity_error_out$xor0000> created at line 198.
+    Found 2-bit register for signal <parity_mode_r>.
+    Found 1-bit register for signal <parity_r>.
+    Found 1-bit register for signal <stop_count_r>.
+    Found 2-bit register for signal <stop_r>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  30 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Xor(s).
+Unit <RxReceiver> synthesized.
+
+
+Synthesizing Unit <Pwm>.
+    Related source file is "Pwm.v".
+    Found 1-bit register for signal <pwm_out>.
+    Found 32-bit up counter for signal <clk_div_count_r>.
+    Found 8-bit up counter for signal <pwm_compare_r>.
+    Found 8-bit comparator less for signal <pwm_out$cmp_lt0000> created at line 40.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <Pwm> synthesized.
+
+
+Synthesizing Unit <RxControl>.
+    Related source file is "uart.v".
+    Found 1-bit register for signal <overrun_error_out>.
+    Found 32-bit register for signal <mod_count_r>.
+    Found 32-bit addsub for signal <mod_count_r$addsub0000>.
+    Found 32-bit comparator less for signal <mod_count_r$cmp_lt0000> created at line 78.
+    Found 1-bit register for signal <rx_rdy_r>.
+    Found 1-bit register for signal <rx_rdy_s_r>.
+    Found 1-bit xor2 for signal <rx_rdy_s_r$xor0000> created at line 52.
+    Found 8-bit register for signal <sample_count_r>.
+    Found 8-bit subtractor for signal <sample_count_r$addsub0000> created at line 86.
+    Found 32-bit comparator greatequal for signal <sample_count_r$cmp_ge0000> created at line 78.
+    Found 1-bit register for signal <sample_r>.
+    Summary:
+	inferred  44 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <RxControl> synthesized.
+
+
+Synthesizing Unit <Motor>.
+    Related source file is "Pwm.v".
+    Found 8-bit register for signal <mminus>.
+    Found 8-bit register for signal <mplus>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <Motor> synthesized.
+
+
+Synthesizing Unit <rc_car_top>.
+    Related source file is "rc_car_top.v".
+Unit <rc_car_top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 3-bit subtractor                                      : 1
+ 32-bit addsub                                         : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 8
+ 32-bit up counter                                     : 4
+ 8-bit up counter                                      : 4
+# Registers                                            : 41
+ 1-bit register                                        : 27
+ 2-bit register                                        : 1
+ 3-bit register                                        : 1
+ 32-bit register                                       : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 10
+# Comparators                                          : 6
+ 32-bit comparator greatequal                          : 1
+ 32-bit comparator less                                : 1
+ 8-bit comparator less                                 : 4
+# Xors                                                 : 2
+ 1-bit xor10                                           : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <uart_rxm/rx_magic/state/FSM> on signal <state[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 010
+ 100   | 110
+-------------------
+WARNING:Xst:1710 - FF/Latch <stop_count_r> (without init value) has a constant value of 0 in block <rx_magic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <parity_mode_r_1> (without init value) has a constant value of 0 in block <rx_magic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <parity_mode_r_0> of sequential type is unconnected in block <rx_magic>.
+WARNING:Xst:2404 -  FFs/Latches <parity_mode_r<1:0>> (without init value) have a constant value of 0 in block <RxReceiver>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 3
+ 3-bit subtractor                                      : 1
+ 32-bit addsub                                         : 1
+ 8-bit subtractor                                      : 1
+# Counters                                             : 8
+ 32-bit up counter                                     : 4
+ 8-bit up counter                                      : 4
+# Registers                                            : 146
+ Flip-Flops                                            : 146
+# Comparators                                          : 6
+ 32-bit comparator greatequal                          : 1
+ 32-bit comparator less                                : 1
+ 8-bit comparator less                                 : 4
+# Xors                                                 : 2
+ 1-bit xor10                                           : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <stop_count_r> (without init value) has a constant value of 0 in block <RxReceiver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <stop_r_0> of sequential type is unconnected in block <RxReceiver>.
+
+Optimizing unit <rc_car_top> ...
+
+Optimizing unit <MotorControl> ...
+
+Optimizing unit <RxReceiver> ...
+WARNING:Xst:1710 - FF/Latch <stop_r_1> (without init value) has a constant value of 1 in block <RxReceiver>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Pwm> ...
+
+Optimizing unit <RxControl> ...
+
+Optimizing unit <Motor> ...
+WARNING:Xst:2677 - Node <uart_rxm/rx_magic/rx_complete_out> of sequential type is unconnected in block <rc_car_top>.
+WARNING:Xst:2677 - Node <uart_rxm/rx_magic/frame_error_out> of sequential type is unconnected in block <rc_car_top>.
+WARNING:Xst:2677 - Node <uart_rxm/rx_magic/parity_r> of sequential type is unconnected in block <rc_car_top>.
+WARNING:Xst:2677 - Node <uart_rxm/rx_magic/break_out> of sequential type is unconnected in block <rc_car_top>.
+WARNING:Xst:2677 - Node <uart_rxm/rx_magic/parity_error_out> of sequential type is unconnected in block <rc_car_top>.
+WARNING:Xst:2677 - Node <uart_rxm/rx_rdy_s_r> of sequential type is unconnected in block <rc_car_top>.
+WARNING:Xst:2677 - Node <uart_rxm/overrun_error_out> of sequential type is unconnected in block <rc_car_top>.
+WARNING:Xst:2677 - Node <uart_rxm/rx_rdy_r> of sequential type is unconnected in block <rc_car_top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block rc_car_top, actual ratio is 24.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 298
+ Flip-Flops                                            : 298
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : rc_car_top.ngr
+Top Level Output File Name         : rc_car_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 855
+#      GND                         : 1
+#      INV                         : 19
+#      LUT1                        : 153
+#      LUT2                        : 105
+#      LUT3                        : 23
+#      LUT4                        : 97
+#      LUT4_L                      : 1
+#      MUXCY                       : 255
+#      MUXF5                       : 8
+#      VCC                         : 1
+#      XORCY                       : 192
+# FlipFlops/Latches                : 298
+#      FDE                         : 14
+#      FDR                         : 175
+#      FDRE                        : 91
+#      FDRS                        : 10
+#      FDS                         : 1
+#      FDSE                        : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 4
+#      OBUF                        : 12
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-5 
+
+ Number of Slices:                      227  out of    960    23%  
+ Number of Slice Flip Flops:            298  out of   1920    15%  
+ Number of 4 input LUTs:                398  out of   1920    20%  
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of     83    20%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_in                             | BUFGP                  | 298   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 8.130ns (Maximum Frequency: 123.000MHz)
+   Minimum input arrival time before clock: 4.915ns
+   Maximum output required time after clock: 4.134ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_in'
+  Clock period: 8.130ns (frequency: 123.000MHz)
+  Total number of paths / destination ports: 21659 / 547
+-------------------------------------------------------------------------
+Delay:               8.130ns (Levels of Logic = 43)
+  Source:            uart_rxm/mod_count_r_4 (FF)
+  Destination:       uart_rxm/mod_count_r_31 (FF)
+  Source Clock:      clk_in rising
+  Destination Clock: clk_in rising
+
+  Data Path: uart_rxm/mod_count_r_4 to uart_rxm/mod_count_r_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDSE:C->Q             2   0.514   0.532  uart_rxm/mod_count_r_4 (uart_rxm/mod_count_r_4)
+     LUT1:I0->O            1   0.612   0.000  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<0>_rt (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<0>_rt)
+     MUXCY:S->O            1   0.404   0.000  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<0> (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.051   0.000  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<1> (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<2> (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<3> (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<4> (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<5> (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<6> (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<6>)
+     MUXCY:CI->O          31   0.051   1.142  uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<7> (uart_rxm/Mcompar_mod_count_r_cmp_lt0000_cy<7>)
+     LUT2:I1->O            1   0.612   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_lut<0> (uart_rxm/Maddsub_mod_count_r_addsub0000_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<0> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<0>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<1> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<2> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<3> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<4> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<5> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<6> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<7> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<7>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<8> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<9> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<10> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<11> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<12> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<13> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<14> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<15> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<16> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<17> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<18> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<19> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<20> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<21> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<22> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<23> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<24> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<25> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<26> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<27> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<27>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<28> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<28>)
+     MUXCY:CI->O           1   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<29> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<29>)
+     MUXCY:CI->O           0   0.052   0.000  uart_rxm/Maddsub_mod_count_r_addsub0000_cy<30> (uart_rxm/Maddsub_mod_count_r_addsub0000_cy<30>)
+     XORCY:CI->O           1   0.699   0.426  uart_rxm/Maddsub_mod_count_r_addsub0000_xor<31> (uart_rxm/mod_count_r_addsub0000<31>)
+     LUT2:I1->O            1   0.612   0.000  uart_rxm/mod_count_r_mux0000<0>1 (uart_rxm/mod_count_r_mux0000<0>)
+     FDRE:D                    0.268          uart_rxm/mod_count_r_31
+    ----------------------------------------
+    Total                      8.130ns (6.030ns logic, 2.100ns route)
+                                       (74.2% logic, 25.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_in'
+  Total number of paths / destination ports: 362 / 358
+-------------------------------------------------------------------------
+Offset:              4.915ns (Levels of Logic = 3)
+  Source:            uart_rx (PAD)
+  Destination:       uart_rxm/rx_magic/data_r_7 (FF)
+  Destination Clock: clk_in rising
+
+  Data Path: uart_rx to uart_rxm/rx_magic/data_r_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.106   0.638  uart_rx_IBUF (uart_rx_IBUF)
+     LUT4:I1->O            8   0.612   0.795  uart_rxm/rx_magic/data_r_0_mux000041 (uart_rxm/rx_magic/N5)
+     LUT4:I0->O            1   0.612   0.357  uart_rxm/rx_magic/data_r_7_mux000032 (uart_rxm/rx_magic/data_r_7_mux000032)
+     FDRS:S                    0.795          uart_rxm/rx_magic/data_r_7
+    ----------------------------------------
+    Total                      4.915ns (3.125ns logic, 1.790ns route)
+                                       (63.6% logic, 36.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              4.134ns (Levels of Logic = 1)
+  Source:            uart_rxm/rx_magic/data_out_0 (FF)
+  Destination:       uart_data<7> (PAD)
+  Source Clock:      clk_in rising
+
+  Data Path: uart_rxm/rx_magic/data_out_0 to uart_data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.514   0.451  uart_rxm/rx_magic/data_out_0 (uart_rxm/rx_magic/data_out_0)
+     OBUF:I->O                 3.169          uart_data_7_OBUF (uart_data<7>)
+    ----------------------------------------
+    Total                      4.134ns (3.683ns logic, 0.451ns route)
+                                       (89.1% logic, 10.9% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.50 secs
+ 
+--> 
+
+Total memory usage is 265564 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

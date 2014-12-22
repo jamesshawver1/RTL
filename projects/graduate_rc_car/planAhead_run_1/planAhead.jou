@@ -1,0 +1,80 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Mon Dec 15 19:27:16 2014
+# Process ID: 4016
+# Log file: C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS33 [get_ports [list {uart_data[7]} {uart_data[6]} {uart_data[5]} {uart_data[4]} {uart_data[3]} {uart_data[2]} {uart_data[1]} {uart_data[0]}]]
+startgroup
+set_property package_pin G1 [get_ports {uart_data[7]}]
+endgroup
+startgroup
+set_property package_pin P4 [get_ports {uart_data[6]}]
+endgroup
+startgroup
+set_property package_pin N4 [get_ports {uart_data[6]}]
+endgroup
+startgroup
+set_property package_pin P4 [get_ports {uart_data[6]}]
+endgroup
+startgroup
+set_property package_pin N4 [get_ports {uart_data[5]}]
+endgroup
+startgroup
+set_property package_pin N5 [get_ports {uart_data[4]}]
+endgroup
+startgroup
+set_property package_pin P6 [get_ports {uart_data[3]}]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports {uart_data[2]}]
+endgroup
+startgroup
+set_property package_pin M11 [get_ports {uart_data[1]}]
+endgroup
+startgroup
+set_property package_pin M5 [get_ports {uart_data[0]}]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list clk_in]]
+set_property iostandard LVCMOS33 [get_ports [list enable_in]]
+set_property iostandard LVCMOS33 [get_ports [list m1_minus]]
+set_property iostandard LVCMOS33 [get_ports [list m1_plus]]
+set_property iostandard LVCMOS33 [get_ports [list m2_minus]]
+set_property iostandard LVCMOS33 [get_ports [list m2_plus]]
+set_property iostandard LVCMOS33 [get_ports [list read_in]]
+set_property iostandard LVCMOS33 [get_ports [list reset_in]]
+save_constraints
+set_property iostandard LVCMOS33 [get_ports [list uart_rx]]
+startgroup
+set_property package_pin B5 [get_ports uart_rx]
+endgroup
+startgroup
+set_property package_pin N3 [get_ports reset_in]
+endgroup
+startgroup
+set_property package_pin E2 [get_ports read_in]
+endgroup
+startgroup
+set_property package_pin C6 [get_ports m2_plus]
+endgroup
+startgroup
+set_property package_pin P11 [get_ports enable_in]
+endgroup
+startgroup
+set_property package_pin B8 [get_ports clk_in]
+endgroup
+startgroup
+set_property package_pin B7 [get_ports m1_minus]
+endgroup
+startgroup
+set_property package_pin C5 [get_ports m1_plus]
+endgroup
+startgroup
+set_property package_pin B6 [get_ports m2_minus]
+endgroup
+save_constraints

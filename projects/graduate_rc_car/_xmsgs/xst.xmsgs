@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="Xst" num="2679" delta="new" >Register &lt;<arg fmt="%s" index="1">num_samples_r</arg>&gt; in unit &lt;<arg fmt="%s" index="2">RxControl</arg>&gt; has a constant value of <arg fmt="%s" index="3">00010000</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">stop_count_r</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_magic</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">parity_mode_r_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_magic</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">parity_mode_r_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rx_magic</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">parity_mode_r</arg>&lt;<arg fmt="%d" index="2">1</arg>:<arg fmt="%d" index="3">0</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">RxReceiver</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">stop_count_r</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">RxReceiver</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">stop_r_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">RxReceiver</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">stop_r_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">RxReceiver</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">uart_rxm/rx_magic/rx_complete_out</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rc_car_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">uart_rxm/rx_magic/frame_error_out</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rc_car_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">uart_rxm/rx_magic/parity_r</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rc_car_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">uart_rxm/rx_magic/break_out</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rc_car_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">uart_rxm/rx_magic/parity_error_out</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rc_car_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">uart_rxm/rx_rdy_s_r</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rc_car_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">uart_rxm/overrun_error_out</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rc_car_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">uart_rxm/rx_rdy_r</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rc_car_top</arg>&gt;.
+</msg>
+
+</messages>
+

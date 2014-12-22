@@ -1,0 +1,378 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Reading design: MotorControl.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MotorControl.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MotorControl"
+Output Format                      : NGC
+Target Device                      : xc3s100e-5-cp132
+
+---- Source Options
+Top Module Name                    : MotorControl
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "uart.v" in library work
+Module <RxControl> compiled
+Module <RxReceiver> compiled
+Module <TxTransmitter> compiled
+Module <TxControl> compiled
+Module <CpuIfBlock> compiled
+Compiling verilog file "Pwm.v" in library work
+Module <UART> compiled
+Module <Pwm> compiled
+Compiling verilog file "rc_car_top.v" in library work
+Module <Motor> compiled
+Module <MotorControl> compiled
+Module <rc_car_top> compiled
+No errors in compilation
+Analysis of file <"MotorControl.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <MotorControl> in library <work> with parameters.
+	M1_BACK = "00000001"
+	M1_FOR = "00000000"
+	M2_BACK = "00000011"
+	M2_FOR = "00000010"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <MotorControl>.
+	M1_BACK = 8'b00000001
+	M1_FOR = 8'b00000000
+	M2_BACK = 8'b00000011
+	M2_FOR = 8'b00000010
+Module <MotorControl> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <MotorControl>.
+    Related source file is "rc_car_top.v".
+    Using one-hot encoding for signal <enabled_update>.
+    Found 1-bit register for signal <m1_direction_out>.
+    Found 8-bit register for signal <m1_speed_out>.
+    Found 1-bit register for signal <m2_direction_out>.
+    Found 8-bit register for signal <m2_speed_out>.
+    Found 4-bit register for signal <enabled_update>.
+    Summary:
+	inferred  22 D-type flip-flop(s).
+Unit <MotorControl> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 5
+ 1-bit register                                        : 2
+ 4-bit register                                        : 1
+ 8-bit register                                        : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 22
+ Flip-Flops                                            : 22
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <MotorControl> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MotorControl, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 22
+ Flip-Flops                                            : 22
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : MotorControl.ngr
+Top Level Output File Name         : MotorControl
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 28
+
+Cell Usage :
+# BELS                             : 24
+#      LUT3                        : 3
+#      LUT4                        : 21
+# FlipFlops/Latches                : 22
+#      FDR                         : 3
+#      FDRE                        : 18
+#      FDS                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 27
+#      IBUF                        : 9
+#      OBUF                        : 18
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-5 
+
+ Number of Slices:                       14  out of    960     1%  
+ Number of Slice Flip Flops:             22  out of   1920     1%  
+ Number of 4 input LUTs:                 24  out of   1920     1%  
+ Number of IOs:                          28
+ Number of bonded IOBs:                  28  out of     83    33%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_in                             | BUFGP                  | 22    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 2.213ns (Maximum Frequency: 451.937MHz)
+   Minimum input arrival time before clock: 5.315ns
+   Maximum output required time after clock: 4.063ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_in'
+  Clock period: 2.213ns (frequency: 451.937MHz)
+  Total number of paths / destination ports: 58 / 22
+-------------------------------------------------------------------------
+Delay:               2.213ns (Levels of Logic = 1)
+  Source:            enabled_update_1 (FF)
+  Destination:       m1_direction_out (FF)
+  Source Clock:      clk_in rising
+  Destination Clock: clk_in rising
+
+  Data Path: enabled_update_1 to m1_direction_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             10   0.514   0.819  enabled_update_1 (enabled_update_1)
+     LUT3:I1->O            1   0.612   0.000  m1_direction_out_mux00001 (m1_direction_out_mux0000)
+     FDRE:D                    0.268          m1_direction_out
+    ----------------------------------------
+    Total                      2.213ns (1.394ns logic, 0.819ns route)
+                                       (63.0% logic, 37.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_in'
+  Total number of paths / destination ports: 178 / 60
+-------------------------------------------------------------------------
+Offset:              5.315ns (Levels of Logic = 4)
+  Source:            data_in<4> (PAD)
+  Destination:       enabled_update_0 (FF)
+  Destination Clock: clk_in rising
+
+  Data Path: data_in<4> to enabled_update_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.106   0.603  data_in_4_IBUF (data_in_4_IBUF)
+     LUT3:I0->O            1   0.612   0.360  m1_direction_out_not0001_SW0 (N13)
+     LUT4:I3->O           22   0.612   1.141  m1_direction_out_not0001 (m1_direction_out_not0001)
+     LUT4:I0->O            1   0.612   0.000  enabled_update_mux0000<3>11 (enabled_update_mux0000<3>11)
+     FDS:D                     0.268          enabled_update_0
+    ----------------------------------------
+    Total                      5.315ns (3.210ns logic, 2.105ns route)
+                                       (60.4% logic, 39.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Offset:              4.063ns (Levels of Logic = 1)
+  Source:            m1_direction_out (FF)
+  Destination:       m1_direction_out (PAD)
+  Source Clock:      clk_in rising
+
+  Data Path: m1_direction_out to m1_direction_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.514   0.380  m1_direction_out (m1_direction_out_OBUF)
+     OBUF:I->O                 3.169          m1_direction_out_OBUF (m1_direction_out)
+    ----------------------------------------
+    Total                      4.063ns (3.683ns logic, 0.380ns route)
+                                       (90.6% logic, 9.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.72 secs
+ 
+--> 
+
+Total memory usage is 256796 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

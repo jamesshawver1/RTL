@@ -1,0 +1,23 @@
+
+
+
+// Instantiate the module
+RxControl instance_name (
+    .clk_in(clk_in), 
+    .enable_in(enable_in), 
+    .n_reset_in(n_reset_in), 
+    .n_rd_in(n_rd_in), 
+    .s_num_in(s_num_in), 
+    .clk_div_baud_in(clk_div_baud_in), 
+    .parity_in(parity_in), 
+    .d_num_in(d_num_in), 
+    .rx_in(rx_in), 
+    .overrun_error_out(overrun_error_out), 
+    .parity_error_out(parity_error_out), 
+    .frame_error_out(frame_error_out), 
+    .break_out(break_out), 
+    .data_out(data_out), 
+    .rx_rdy_out(rx_rdy_out)
+    );
+
+

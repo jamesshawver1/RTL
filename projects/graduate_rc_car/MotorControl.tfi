@@ -1,0 +1,15 @@
+
+
+
+// Instantiate the module
+MotorControl instance_name (
+    .data_in(data_in), 
+    .clk_in(clk_in), 
+    .reset_in(reset_in), 
+    .m1_direction_out(m1_direction_out), 
+    .m2_direction_out(m2_direction_out), 
+    .m1_speed_out(m1_speed_out), 
+    .m2_speed_out(m2_speed_out)
+    );
+
+

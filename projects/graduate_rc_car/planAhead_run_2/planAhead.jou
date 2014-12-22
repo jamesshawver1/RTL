@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Tue Dec 16 02:50:13 2014
+# Process ID: 7704
+# Log file: C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin A9 [get_ports m1_minus]
+endgroup
+startgroup
+set_property package_pin B9 [get_ports m1_plus]
+endgroup
+startgroup
+set_property package_pin A10 [get_ports m2_minus]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports m2_plus]
+endgroup
+startgroup
+set_property package_pin B7 [get_ports uart_rx]
+endgroup
+save_constraints

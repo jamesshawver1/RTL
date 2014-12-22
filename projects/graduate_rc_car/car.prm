@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator P.20131013
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\Users\jjshawver\Documents\DHD\RTL\graduate_rc_car//car -x xcf01s -u 00000000 C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/rc_car_top_cclktemp.bit 
+
+PROM C:\Users\jjshawver\Documents\DHD\RTL\graduate_rc_car\car.prm map: Tue Dec 16 02:55:44 2014
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          128K
+PROM start    0000:0000
+PROM end      0001:ffff
+PROM checksum 00ea5052
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    0001:1bdb     Dec 16 02:55:32 2014 C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/rc_car_top_cclktemp.bit

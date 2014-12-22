@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="uart_data">
+			<Port Id="7" Dir="OUT"/>
+			<Port Id="6" Dir="OUT"/>
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Port Id="uart_rx" Dir="IN"/>
+		<Port Id="clk_in" Dir="IN"/>
+		<Port Id="reset_in" Dir="IN"/>
+		<Port Id="enable_in" Dir="IN"/>
+		<Port Id="read_in" Dir="IN"/>
+		<Port Id="m1_plus" Dir="OUT"/>
+		<Port Id="m1_minus" Dir="OUT"/>
+		<Port Id="m2_plus" Dir="OUT"/>
+		<Port Id="m2_minus" Dir="OUT"/>
+	</Ifc>
+</Interface>
+
