@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\jjshawver\Documents\DHD\RTL\graduate_rc_car\rc_car_top.ncd
-OUTFILE=C:\Users\jjshawver\Documents\DHD\RTL\graduate_rc_car\rc_car_top.bit
+INFILE=/home/jjshawver/libs/RTL/projects/graduate_rc_car/rc_car_top.ncd
+OUTFILE=/home/jjshawver/libs/RTL/projects/graduate_rc_car/rc_car_top.bit
 FAMILY=Spartan3E
 PART=xc3s100e-5cp132
-WORKINGDIR=C:\Users\jjshawver\Documents\DHD\RTL\graduate_rc_car
+WORKINGDIR=/home/jjshawver/libs/RTL/projects/graduate_rc_car
 LICENSE=WebPack
-USER_INFO=210911286_0_0_766
+USER_INFO=210911286_0_0_173

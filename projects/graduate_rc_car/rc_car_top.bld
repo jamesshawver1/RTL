@@ -1,12 +1,13 @@
-Release 14.7 ngdbuild P.20131013 (nt64)
+Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+Command Line:
+/home/jjshawver/libs/xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
 -intstyle ise -dd _ngo -nt timestamp -uc rc_car_top.ucf -p xc3s100e-cp132-5
 rc_car_top.ngc rc_car_top.ngd
 
 Reading NGO file
-"C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/rc_car_top.ngc" ...
+"/home/jjshawver/libs/RTL/projects/graduate_rc_car/rc_car_top.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -28,7 +29,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 156772 kilobytes
+Total memory usage is 396420 kilobytes
 
 Writing NGD file "rc_car_top.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec

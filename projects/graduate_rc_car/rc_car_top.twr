@@ -1,10 +1,10 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (nt64)
+Release 14.7 Trace  (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 5
--n 3 -fastpaths -xml rc_car_top.twx rc_car_top.ncd -o rc_car_top.twr
-rc_car_top.pcf -ucf rc_car_top.ucf
+/home/jjshawver/libs/xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle
+ise -v 3 -s 5 -n 3 -fastpaths -xml rc_car_top.twx rc_car_top.ncd -o
+rc_car_top.twr rc_car_top.pcf -ucf rc_car_top.ucf
 
 Design file:              rc_car_top.ncd
 Physical constraint file: rc_car_top.pcf
@@ -79,14 +79,14 @@ clk_in         |    7.436|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue Dec 16 02:53:29 2014 
+Analysis completed Mon Dec 29 17:06:23 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 160 MB
+Peak Memory Usage: 338 MB
 
 
 

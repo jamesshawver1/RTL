@@ -1,18 +1,21 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to xst/projnav.tmp
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
---> Parameter xsthdpdir set to xst
+--> 
+Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
---> Reading design: rc_car_top.prj
+--> 
+Reading design: rc_car_top.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -110,7 +113,7 @@ Module <RxReceiver> compiled
 Module <TxTransmitter> compiled
 Module <TxControl> compiled
 Module <CpuIfBlock> compiled
-Compiling verilog file "Pwm.v" in library work
+Compiling verilog file "../../libs/dc_motor/motor_pwm.v" in library work
 Module <UART> compiled
 Module <Pwm> compiled
 Compiling verilog file "rc_car_top.v" in library work
@@ -243,7 +246,7 @@ Unit <RxReceiver> synthesized.
 
 
 Synthesizing Unit <Pwm>.
-    Related source file is "Pwm.v".
+    Related source file is "../../libs/dc_motor/motor_pwm.v".
     Found 1-bit register for signal <pwm_out>.
     Found 32-bit up counter for signal <clk_div_count_r>.
     Found 8-bit up counter for signal <pwm_compare_r>.
@@ -276,7 +279,7 @@ Unit <RxControl> synthesized.
 
 
 Synthesizing Unit <Motor>.
-    Related source file is "Pwm.v".
+    Related source file is "../../libs/dc_motor/motor_pwm.v".
     Found 8-bit register for signal <mminus>.
     Found 8-bit register for signal <mplus>.
     Summary:
@@ -615,12 +618,13 @@ Offset:              4.134ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.50 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.11 secs
  
 --> 
 
-Total memory usage is 265564 kilobytes
+
+Total memory usage is 523048 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   15 (   0 filtered)

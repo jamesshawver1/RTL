@@ -4,13 +4,13 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 Project Information
 --------------------
 ProjectID=83ED9D40BE5C4B28A1A7F8D34E3A3603
-ProjectIteration=18
+ProjectIteration=19
 
 WebTalk Summary
 ----------------
-INFO:WebTalk:2 - WebTalk is enabled.
+INFO:WebTalk:1 - WebTalk is enabled because you are using a WebPACK license.
 
 INFO:WebTalk:8 - WebTalk Install setting is ON.
 INFO:WebTalk:6 - WebTalk User setting is ON.
 
-INFO:WebTalk:4 - C:/Users/jjshawver/Documents/DHD/RTL/graduate_rc_car/usage_statistics_webtalk.html WebTalk report has been successfully sent to Xilinx on 2014-12-16T02:53:47.  For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/14.7/ISE_DS/ISE/data/reports/webtalk_introduction.html
+INFO:WebTalk:5 - /home/jjshawver/libs/RTL/projects/graduate_rc_car/usage_statistics_webtalk.html WebTalk report has not been sent to Xilinx.  Please check your network and proxy settings.  For additional details about this file, please refer to the WebTalk help file at /home/jjshawver/libs/xilinx/14.7/ISE_DS/ISE/data/reports/webtalk_introduction.html
